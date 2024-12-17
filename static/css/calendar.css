@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    height: 70px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td.sunday {
+    background-color: #ffcccc;
+    color: red;
+}
+
+td.saturday {
+    background-color: #cce5ff;
+    color: blue;
+}
+
+td.empty {
+    background-color: #f9f9f9;
+}
+
+td {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.event-list {
+    max-height: 60px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 0;
+    margin: 0;
+}
+
+.event-item {
+    list-style-type: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+}
+
+#event-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#event-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#event-menu button:hover {
+    background-color: #45a049;
+}
+
+#add-event-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+}
+
+form button {
+    width: 45%; /* ボタンの幅を変更（横並びになるように） */
+    padding: 8px; /* ボタンの内側の余白を小さく */
+    font-size: 14px; /* フォントサイズを小さく */
+    border: none; /* 枠線をなし */
+    background-color: #4CAF50; /* 変更ボタンの背景色 */
+    color: white; /* 文字色 */
+    border-radius: 5px; /* 角を丸める */
+    cursor: pointer; /* カーソルをポインタに変更 */
+    margin: 5px; /* ボタン間の間隔 */
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+form input[type="text"] {
+    width: 80%;
+    height: 35px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #007bff;
+    padding: 5px 15px;
+    margin: 0 10px;
+}
+
+.navigation a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.navigation .prev-month, .navigation .next-month {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.navigation .prev-month:hover, .navigation .next-month:hover {
+    background-color: #45a049;
+}
+
+
+#edit-event-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#edit-event-form input[type="text"] {
+    width: 80%;
+    height: 35px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+
+#edit-event-form button {
+    width: 45%; /* ボタンの幅を変更（横並びになるように） */
+    padding: 8px; /* ボタンの内側の余白を小さく */
+    font-size: 14px; /* フォントサイズを小さく */
+    border: none; /* 枠線をなし */
+    background-color: #4CAF50; /* 変更ボタンの背景色 */
+    color: white; /* 文字色 */
+    border-radius: 5px; /* 角を丸める */
+    cursor: pointer; /* カーソルをポインタに変更 */
+    margin: 5px; /* ボタン間の間隔 */
+}
+
+#edit-event-form button:hover {
+    background-color: #45a049; /* ホバー時に背景色を変更 */
+}
+
+#edit-event-form button.cancel {
+    background-color: #f44336; /* キャンセルボタンの背景色 */
+}
+
+#edit-event-form button.cancel:hover {
+    background-color: #e53935; /* キャンセルボタンホバー時 */
+}
+
+/* 横並びにするためのスタイル */
+#edit-event-form .button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+    th, td {
+        height: 60px;
+        font-size: 14px;
+    }
+
+    .event-list {
+        font-size: 13px;
+        max-height: 50px;
+    }
+
+    #add-event-form {
+        width: 300px;
+    }
+
+    .day-number {
+        font-size: 16px;
+    }
+}
